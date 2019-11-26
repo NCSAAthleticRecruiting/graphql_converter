@@ -70,7 +70,7 @@ When that happens, all the fields included in our query will be called against
 that object (i.e. `athlete.client_id`, `athlete.name`, etc.).
 
 Let's say that the field `profile_image` isn't directly on the `athlete` object,
-but is instead accessible through some relation. Typically in GraphQL could
+but is instead accessible through some relation. Typically in GraphQL you would
 solve this by:
 
 1. Creating types for each of the relations leading to that particular piece of
