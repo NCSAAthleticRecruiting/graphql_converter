@@ -71,10 +71,14 @@ that object (i.e. `athlete.client_id`, `athlete.name`, etc.).
 
 Let's say that the field `profile_image` isn't directly on the `athlete` object,
 but is instead accessible through some relation. Typically in GraphQL could
-solve this by: (1) creating types for each of the relations leading to that
-particular piece of data, or (2) creating a resolved in the type definition
-that performs those calls. While solving this with option (1) is arguably more
-correct, we will often go with (2) and simply create a resolver method.
+solve this by:
+
+1. Creating types for each of the relations leading to that particular piece of
+  data
+2. Creating a resolver in the type definition that performs those calls.
+
+While solving this with option (1) is arguably more correct, we will often go
+with (2) and simply create a resolver method.
 
 If we're using GraphQL Converter, then our goal will be to keep our `Type`
 definition as simple as possible, and instead create a converter that
@@ -165,4 +169,4 @@ Converters::AthleteHashConverter.new(
 You can see that the hash we provided doesn't contain all the fields we defined
 in our `Types::AthleteType`. Despite that, the hash converter will know how to
 find the requested data, first checking the provided hash and then falling back
-to the bash converter.
+to the base converter.
